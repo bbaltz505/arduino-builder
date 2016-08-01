@@ -31,11 +31,12 @@
 package test
 
 import (
-	"arduino.cc/builder"
-	"arduino.cc/builder/types"
 	"os"
 	"path/filepath"
 	"testing"
+
+	"arduino.cc/builder"
+	"arduino.cc/builder/types"
 )
 
 func TestTryBuild001(t *testing.T) {
@@ -203,6 +204,10 @@ func TestTryBuild039(t *testing.T) {
 	ctx := makeDefaultContext(t)
 	ctx.FQBN = "arduino:samd:arduino_zero_native"
 	tryBuildWithContext(t, ctx, "sketch12", "sketch12.ino")
+}
+
+func TestTryBuild040(t *testing.T) {
+	tryBuild(t, "sketch13", "sketch13.ino")
 }
 
 func makeDefaultContext(t *testing.T) *types.Context {
